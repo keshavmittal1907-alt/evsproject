@@ -1,0 +1,120 @@
+:root {
+  /* Sophisticated Enterprise OLED Black */
+  --bg-dark: #000000; /* Pure black background */
+  --bg-panel: #111111; /* Very dark solid cards */
+  --bg-panel-hover: #1a1a1a; /* Slight hover elevation */
+  
+  --primary: #38bdf8; /* Clean, calm Sky Blue */
+  --secondary: #94a3b8; /* Slate 400 */
+  
+  --text-primary: #ffffff; /* Pure white text */
+  --text-secondary: #a1a1aa; /* Zinc 400 */
+  --text-muted: #52525b; /* Zinc 600 */
+  
+  --border-glass: #27272a; /* Solid subtle border, completely removing translucency */
+  
+  /* Status Colors (Muted, professional hues instead of glowing neons) */
+  --safe: #10b981; /* Emerald */
+  --warning: #f59e0b; /* Amber */
+  --danger: #ef4444; /* Clean Red */
+  
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  /* Strip out previous hacker-like background radials */
+  background-image: none;
+}
+
+/* Rename from glass-panel conceptually, but keep classname for DOM compatibility */
+.glass-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-glass);
+  border-radius: 8px; /* Sharper, more rigid enterprise corners */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2); /* Deep, mature structural shadow */
+}
+
+/* Remove gradient text */
+.text-gradient {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: #0f172a; /* Dark text on bright button for highest readability */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+  background-color: #7dd3fc;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-panel-hover);
+}
+
+input, textarea, select {
+  font-family: var(--font-sans);
+  background: var(--bg-dark) !important;
+  border: 1px solid var(--border-glass) !important;
+  color: var(--text-primary) !important;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary) !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+/* Simple, corporate fade */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Refined Data Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.data-table th {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
